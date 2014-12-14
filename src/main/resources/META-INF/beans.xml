@@ -6,4 +6,5 @@
     <!--<alternatives>-->
         <!--<class>org.cdi.advocacy.JsonRestATMTransport</class>-->
     <!--</alternatives>-->
+
 </beans>

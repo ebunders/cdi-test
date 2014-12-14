@@ -11,12 +11,27 @@ import javax.inject.Inject;
  */
 public class TransportFactory {
 
+    //These could be looked up in a DB, JNDI or a properties file.
+    private boolean useJSON = true;
+    private boolean behindFireWall = true;
+
     @Inject
     private final Logger logger = null;
 
     @Produces
     public ATMTransport createTransport(){
-        logger.log("Transport factory creates Soap instance");
-        return new SoapATMTransport();
+        logger.log("Transport factory decides what transport you will use!");
+        if (!behindFireWall) {
+            logger.log(">> using standard");
+            return new StandardATMTransport();
+        } else {
+            if (useJSON) {
+                logger.log(">> using json rest");
+                return new JsonRestATMTransport();
+            } else {
+                logger.log(">> using soap");
+                return new SoapATMTransport();
+            }
+        }
     }
 }

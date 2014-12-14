@@ -24,37 +24,8 @@ public class AutomatedTellerMachineImpl implements AutomatedTellerMachine{
     @Inject
     private Logger logger;
 
+    @Inject
     private ATMTransport transport;
-
-    @Inject @Soap
-    private ATMTransport soapTransport;
-
-    @Inject @JsonRest
-    private ATMTransport jsonTransport;
-
-    @Inject @Standard
-    private ATMTransport standardTransport;
-
-    //These could be looked up in a DB, JNDI or a properties file.
-    private boolean useJSON = false;
-    private boolean behindFireWall = true;
-
-    @PostConstruct
-    protected void init() {
-        //Look up values for useJSON and behindFireWall
-
-        if (!behindFireWall) {
-            transport = standardTransport;
-        } else {
-            if (useJSON) {
-                transport = jsonTransport;
-            } else {
-                transport = soapTransport;
-            }
-        }
-
-    }
-
 
     @Override
     public void deposit(BigDecimal bd) {
