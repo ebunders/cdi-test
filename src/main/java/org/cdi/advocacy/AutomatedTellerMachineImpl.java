@@ -1,5 +1,6 @@
 package org.cdi.advocacy;
 
+import org.cdi.advocacy.cdi.TransportConfig;
 import org.cdi.advocacy.util.Logger;
 
 import javax.inject.Inject;
@@ -21,6 +22,7 @@ public class AutomatedTellerMachineImpl implements AutomatedTellerMachine{
     private Logger logger;
 
     @Inject
+    @TransportConfig(retries = 2)
     private ATMTransport transport;
 
     @Override

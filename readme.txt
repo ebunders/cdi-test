@@ -1,4 +1,6 @@
-CDI tutorial: http://java.dzone.com/articles/cdi-di-p1
+CDI tutorial:
+- http://java.dzone.com/articles/cdi-di-p1
+- http://java.dzone.com/articles/cdi-di-p2
 Apache deltaspike: http://deltaspike.apache.org/
 
 Amazing stuff I learned:
@@ -32,6 +34,14 @@ note: you can annotate the return type of a @Produce method with a custom qualif
 
 @PostConstruct annotated methods will be called after injection, before 'the business'. use for
 runtime configuration based on...
+
+Configuration through annotation
+@Produce methods can have an InjectionPoint instance injected. This will give you a lot of information about the injection
+point and the 'to be injected' value.
+You can create annotations with attributes, use them on the injection point, set some values, and in the @Produce
+method you can read those, and you can use that to construct the 'to be injected'
+BUT!! This should be more like declarative configuration, the 'what', not the 'how'. It should not replace external application
+configuration. It seems a little scary too!
 
 
 
