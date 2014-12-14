@@ -27,4 +27,7 @@ Qualifiers are for composition, defaults more for configuration. (as I see it)
 note: an injectable with a custom qualifier and also @Default, is no longer considered a match. Weird...
 note: you can annotate the return type of a @Produce method with a custom qualifier, and it works. Yay!
 
+@PostConstruct annotated methods will be called after injection, before 'the business'. use for
+runtime configuration based on...
+
 

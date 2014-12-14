@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
 /**
  * Created by ernst on 14-12-14.
  */
-@Default
+@Soap
 public class SoapATMTransport implements ATMTransport {
     @Override
     public void communicateWithBank(byte[] datapacket) {
