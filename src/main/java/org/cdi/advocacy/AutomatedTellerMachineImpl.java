@@ -1,11 +1,7 @@
 package org.cdi.advocacy;
 
-import org.cdi.advocacy.cdi.JsonRest;
-import org.cdi.advocacy.cdi.Soap;
-import org.cdi.advocacy.cdi.Standard;
 import org.cdi.advocacy.util.Logger;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.math.BigDecimal;

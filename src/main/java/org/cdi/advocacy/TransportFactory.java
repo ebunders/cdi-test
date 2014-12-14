@@ -1,8 +1,7 @@
 package org.cdi.advocacy;
 
-import org.cdi.advocacy.cdi.JsonRest;
-import org.cdi.advocacy.cdi.Soap;
-import org.cdi.advocacy.cdi.Standard;
+import org.cdi.advocacy.cdi.TransportType;
+import org.cdi.advocacy.cdi.Transportation;
 import org.cdi.advocacy.util.Logger;
 
 import javax.enterprise.inject.Produces;
@@ -22,9 +21,9 @@ public class TransportFactory {
 
     @Produces
     public ATMTransport createTransport(
-            @Soap ATMTransport soapTransport,
-            @Standard ATMTransport standardTransport,
-            @JsonRest ATMTransport jsonRestTransport){
+            @Transportation(type= TransportType.SOAP) ATMTransport soapTransport,
+            @Transportation(type= TransportType.STANDARD) ATMTransport standardTransport,
+            @Transportation(type= TransportType.JSON) ATMTransport jsonRestTransport){
         logger.log("Transport factory decides what transport you will use!");
         if (!behindFireWall) {
             logger.log(">> using standard");

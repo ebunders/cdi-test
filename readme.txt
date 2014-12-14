@@ -25,10 +25,13 @@ The default system is great if you want one implementation in the whole system (
 The Qualifier system is great if you want different implementations for different uses (say Writers to different backends)
 Qualifiers are for composition, defaults more for configuration. (as I see it)
 
+You can use multipe qualifiers. I suppose it will go for optimum match, but settle for minimum. Too lazy to figure it out.
+
 note: an injectable with a custom qualifier and also @Default, is no longer considered a match. Weird...
 note: you can annotate the return type of a @Produce method with a custom qualifier, and it works. Yay!
 
 @PostConstruct annotated methods will be called after injection, before 'the business'. use for
 runtime configuration based on...
+
 
 

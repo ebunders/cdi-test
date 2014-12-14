@@ -1,14 +1,14 @@
 package org.cdi.advocacy;
 
-import org.cdi.advocacy.cdi.JsonRest;
+import org.cdi.advocacy.cdi.TransportType;
+import org.cdi.advocacy.cdi.Transportation;
 
-import javax.enterprise.inject.Alternative;
 import java.nio.charset.Charset;
 
 /**
  * Created by ernst on 14-12-14.
  */
-@JsonRest
+@Transportation(type = TransportType.JSON)
 public class JsonRestATMTransport implements ATMTransport {
     @Override
     public void communicateWithBank(byte[] datapacket) {

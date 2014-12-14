@@ -1,15 +1,14 @@
 package org.cdi.advocacy;
 
-import org.cdi.advocacy.cdi.Soap;
+import org.cdi.advocacy.cdi.TransportType;
+import org.cdi.advocacy.cdi.Transportation;
 
-import javax.enterprise.inject.Alternative;
-import javax.enterprise.inject.Default;
 import java.nio.charset.Charset;
 
 /**
  * Created by ernst on 14-12-14.
  */
-@Soap
+@Transportation(type= TransportType.SOAP)
 public class SoapATMTransport implements ATMTransport {
     @Override
     public void communicateWithBank(byte[] datapacket) {
