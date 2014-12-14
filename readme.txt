@@ -1,4 +1,5 @@
 CDI tutorial: http://java.dzone.com/articles/cdi-di-p1
+Apache deltaspike: http://deltaspike.apache.org/
 
 Amazing stuff I learned:
 
